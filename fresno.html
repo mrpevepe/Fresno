@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ciano</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(to bottom right, #008b8b, #4400ff);
+        overflow: hidden;
+      }
+
+      #disco {
+        width: 500px;
+        height: 500px;
+        margin-right: 20px;
+        animation: rotate 10s linear infinite;
+        border-radius: 50%;
+        box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #footer {
+        background-color: #181414;
+        color: white;
+        text-align: center;
+        padding: 50px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        font-size: 40px;
+        font-weight: bold;
+        z-index: 10;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+        font-size: 32px;
+        color: white;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      li:hover {
+        transform: translateX(10px);
+      }
+
+      #audioPlayer {
+        width: 50%;
+      }
+
+      .selected {
+        background-color: #00e9e9;
+        padding: 5px;
+        border-radius: 10px;
+        color: #fff;
+        font-weight: bold;
+        box-shadow: 0 0 10px rgba(0, 233, 233, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img id="disco" src="ciano.jpg" />
+    </div>
+    <div id="musica">
+      <ul>
+        <li data-src="01 A Resposta.mp3">1. A Resposta</li>
+        <li data-src="02 Quebre As Correntes.mp3">2. Quebre as Correntes</li>
+        <li data-src="03 o que hoje voce ve.mp3">3. O que hoje você vê</li>
+        <li data-src="04 Absolutamente nada.mp3">4. Absolutamente nada</li>
+        <li
+          data-src="05 Fresno Cada Poça dessa Rua Tem Um Pouco de Minhas Lágrimas.mp3"
+        >
+          5. Cada Poça dessa Rua Tem Um Pouco de Minhas Lágrimas
+        </li>
+        <li data-src="06 Logo Você.mp3">6. Logo você</li>
+        <li data-src="07 O Peso do Mundo.mp3">7. O Peso do Mundo</li>
+        <li data-src="08 Alguem Que Te Faz Sorrir.mp3">
+          8. Alguem Que Te Faz Sorrir
+        </li>
+        <li data-src="09 Soneto para Petr Čech.mp3">
+          9. Soneto para Petr Čech
+        </li>
+        <li data-src="10 Enferrujou.mp3">10. Enferrujou</li>
+        <li data-src="11 Infancia.mp3">11. Infancia</li>
+      </ul>
+      <audio id="audioPlayer" controls style="display: all"></audio>
+    </div>
+    <div id="footer">FRESNO</div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
